@@ -15,4 +15,10 @@ defmodule Poc do
   def hello do
     :world
   end
+
+  def many_files do
+    Enum.each(1..200, fn index ->
+      File.write!("file_#{index}.txt", "content #{index}")
+    end)
+  end
 end
